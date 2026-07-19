@@ -1,0 +1,14 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/noctalia.toml"
+]
+
+[font]
+normal = { family = "Iosevka", style = "Regular"}
+size = 13
+builtin_box_drawing = true
+
+[[keyboard.bindings]]
+key = "Back"
+mods = "Control"
+chars = "\u0017"
