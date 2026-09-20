@@ -17,14 +17,10 @@
     feh
     alsa-utils
     bluetui
+    localsend
+    efibootmgr
 
-    # gnome-themes-extra
-    # catppuccin-gtk
     glib
-
-    # gtk2
-    # gtk3
-
 
     #########
     # Music #
@@ -39,6 +35,7 @@
     ayugram-desktop
     vesktop
     element-desktop
+    zoom-us
 
 
     #######
