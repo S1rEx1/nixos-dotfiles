@@ -10,6 +10,7 @@
         name = "S1rEx1";
         email = "amenhotepyous@gmail.com";
       };
+      credential.helper = "libsecret";
       url."git@github.com:".insteadOf = "https://github.com/";
     };
     # extraConfig = {

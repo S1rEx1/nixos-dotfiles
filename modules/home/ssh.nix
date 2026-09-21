@@ -5,11 +5,17 @@
 
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
+    enableDefaultConfig = false;
 
-    matchBlocks."github.com" = {
-      identityFile = "~/.ssh/id_ed25519";
-      identitiesOnly = true;
+    settings = {
+      "*" = {
+        AddKeysToAgent = "yes";
+      };
+
+      "github.com" = {
+        IdentityFile = "~/.ssh/id_ed25519";
+        IdentitiesOnly = true;
+      };
     };
   };
 }

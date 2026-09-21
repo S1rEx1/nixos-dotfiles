@@ -16,5 +16,5 @@
 			./modules/system/zoxide.nix
       ./modules/system/steam.nix
     ];
-  programs.serpantinum.enable = true;
+#  programs.serpantinum.enable = true;
 }

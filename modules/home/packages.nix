@@ -2,6 +2,10 @@
 
 {
   home.packages = with pkgs; [
+    papirus-icon-theme
+    hicolor-icon-theme
+    adwaita-icon-theme
+    qt6.qtsvg
     #############
     # Cli / TUI #
     #############
@@ -19,8 +23,31 @@
     bluetui
     localsend
     efibootmgr
+    opencode
+    xwayland-satellite
+    unzip
 
     glib
+
+	fzf
+
+	slurp
+	grim
+	hyprpicker
+	tesseract
+	imagemagick
+	zbar
+	curl
+	jq
+	ffmpeg
+	bc
+	mpv
+	gpu-screen-recorder
+
+
+
+
+    noctalia-shell
 
     #########
     # Music #
@@ -61,5 +88,7 @@
     obsidian
     electron
     alacritty
+    foot
   ];
+  gtk.iconTheme.name = "Papirus";
 }

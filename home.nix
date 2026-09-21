@@ -11,6 +11,6 @@
     ./modules/home/zathura.nix
     ./modules/home/catppuccin.nix
     ./modules/home/ssh.nix
-    ./modules/home/serpantinum.nix
+#    ./modules/home/serpantinum.nix
   ];
 }
