@@ -12,5 +12,6 @@
     ./modules/home/catppuccin.nix
     ./modules/home/ssh.nix
 #    ./modules/home/serpantinum.nix
+		./modules/home/noctalia.nix
   ];
 }

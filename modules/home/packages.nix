@@ -29,7 +29,11 @@
 
     glib
 
+		go
+
 	fzf
+
+	ddcutil
 
 	slurp
 	grim
@@ -43,11 +47,6 @@
 	bc
 	mpv
 	gpu-screen-recorder
-
-
-
-
-    noctalia-shell
 
     #########
     # Music #
