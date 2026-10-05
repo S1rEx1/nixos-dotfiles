@@ -1,93 +1,102 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    papirus-icon-theme
-    hicolor-icon-theme
-    adwaita-icon-theme
-    qt6.qtsvg
-    #############
-    # Cli / TUI #
-    #############
-	  neovim
-    fastfetch
-    btop
-    htop
-    tmux
-    brightnessctl
-    tree
-    ranger
-    xclip
-    feh
-    alsa-utils
-    bluetui
-    localsend
-    efibootmgr
-    opencode
-    xwayland-satellite
-    unzip
+	home.packages = with pkgs; [
+			adwaita-icon-theme
+			hicolor-icon-theme
+			papirus-icon-theme
+			qt6.qtsvg
 
-    glib
+			onlyoffice-desktopeditors
 
-		go
+#############
+# Cli / TUI #
+#############
+			alsa-utils
+			bluetui
+			brightnessctl
+			btop
+			efibootmgr
+			fastfetch
+			feh
+			htop
+			localsend
+			neovim
+			opencode
+			ranger
+			tmux
+			tree
+			unzip
+			xclip
+			xwayland-satellite
 
-	fzf
+			glib
 
-	ddcutil
+			go
+			prismlauncher
 
-	slurp
-	grim
-	hyprpicker
-	tesseract
-	imagemagick
-	zbar
-	curl
-	jq
-	ffmpeg
-	bc
-	mpv
-	gpu-screen-recorder
+			fzf
 
-    #########
-    # Music #
-    #########
-    pulseaudio
-    pavucontrol
+			ddcutil
 
+			bc
+			curl
+			ffmpeg
+			gpu-screen-recorder
+			grim
+			hyprpicker
+			imagemagick
+			jq
+			mpv
+			slurp
+			tesseract
+			zbar
 
-    ##############
-    # Messengers #
-    ##############
-    ayugram-desktop
-    vesktop
-    element-desktop
-    zoom-us
+#########
+# Music #
+#########
+			pavucontrol
+			pulseaudio
 
 
-    #######
-    # Dev #
-    #######
-	  nil
-	  nixpkgs-fmt
-	  nodejs
-	  gcc
-    maim
-    rofi
-    python3
-    ruff
-    rustup
+##############
+# Messengers #
+##############
+			ayugram-desktop
+			element-desktop
+			vesktop
+			zoom-us
 
-    picom
-    killall
 
-    #######
-    # GUI #
-    #######
-    nemo
-    obsidian
-    electron
-    alacritty
-    foot
-  ];
-  gtk.iconTheme.name = "Papirus";
+#######
+# Dev #
+#######
+			gcc
+			lua-language-server
+			maim
+			nil
+			nixd
+			nixpkgs-fmt
+			nodejs
+			pyright
+			python3
+			rofi
+			ruff
+			rustup
+
+			killall
+			picom
+
+#######
+# GUI #
+#######
+			alacritty
+			electron
+			foot
+			kdePackages.dolphin
+			obsidian
+			qgis
+			tauon
+			];
+	gtk.iconTheme.name = "Papirus";
 }

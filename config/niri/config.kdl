@@ -1,11 +1,3 @@
-// This config is in the KDL format: https://kdl.dev
-// "/-" comments out the following node.
-// Check the wiki for a full description of the configuration:
-// https://niri-wm.github.io/niri/Configuration:-Introduction
-
-// Input device configuration.
-// Find the full list of options on the wiki:
-// https://niri-wm.github.io/niri/Configuration:-Input
 prefer-no-csd
 input {
 	keyboard {
@@ -26,7 +18,7 @@ input {
 
 output "DP-1" {
 	mode "2560x1440@180"
-	scale 1
+	scale 1.33
 	position x=1920 y=0
 }
 output "HDMI-A-1" {
@@ -50,8 +42,8 @@ layout {
 	focus-ring {
 		width 4
 
-		active-color "#303030"
-		inactive-color "#505050"
+		inactive-color "#303030"
+		active-color "#505050"
 	}
 }
 
@@ -104,17 +96,25 @@ window-rule {
 }
 
 binds {
+	Mod+E { spawn "dolphin"; }
 	Mod+D { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+S { spawn-sh "noctalia msg panel-toggle control-center"; }
     Alt+Tab { spawn-sh "noctalia msg window-switcher"; }
+	Ctrl+Alt+Delete { spawn-sh "noctalia msg panel-toggle session"; }
+	Mod+L { spawn-sh "noctalia msg session lock"; }
+	Mod+V { spawn-sh "noctalia msg panel-toggle clipboard"; }
+	Mod+Shift+S { spawn-sh "noctalia msg screenshot-region"; }
 
 
 	Mod+T { spawn "foot"; }
+	Mod+W { spawn "firefox"; }
 
 	XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
 	XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
 	XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
 	Mod+XF86AudioMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+	Mod+XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-coluume @DEFAULT_AUDIO_SOURCE@ 0.1+ -l 1.0"; }
+	Mod+XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-coluume @DEFAULT_AUDIO_SOURCE@ 0.1-"; }
 
 	XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
 	XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
@@ -132,7 +132,6 @@ binds {
 	Mod+H     { focus-column-left; }
 	Mod+J     { focus-window-down; }
 	Mod+K     { focus-window-up; }
-	Mod+L     { focus-column-right; }
 
 	Mod+Shift+Left  { move-column-left; }
 	Mod+Shift+Down  { move-window-down; }
@@ -209,7 +208,6 @@ binds {
 
 	Mod+Space      { toggle-window-floating; }
 
-	Print { screenshot; }
+	Print { spawn-sh "noctalia msg screenshot-fullscreen"; }
 
-	Ctrl+Alt+Delete { quit; }
 }

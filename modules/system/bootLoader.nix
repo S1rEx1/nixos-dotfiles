@@ -1,6 +1,17 @@
 { config, pkgs, ... }:
 
 {
+	boot.kernelParams = [
+		"video=DP-1:2560x1440@60"
+		"video=HDMI-A-1:1920x1080@60"
+	];
+
+	# keep the EFI framebuffer at native resolution so the text console fills
+	# the screen instead of leaving a 1080p box in the top-left corner
+	boot.loader.grub.gfxmodeEfi = "2560x1440x32";
+
+	console.earlySetup = true;
+	console.font = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
   boot.loader = {
     systemd-boot.enable = false;
 

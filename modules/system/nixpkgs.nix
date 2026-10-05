@@ -1,10 +1,5 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [
-      "electron-39.8.10"
-    ];
-  };
+  nixpkgs.overlays = [ inputs.firefox-addons.overlays.default ];
 }
